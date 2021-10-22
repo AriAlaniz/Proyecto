@@ -1,11 +1,13 @@
 import NavBar from './components/NavBar';
 import './App.css';
+import Explanation from './components/Explanation';
 
 function App() {
   return (
     <>
       <NavBar />
-      <h1>Tienda de regalos</h1>
+      <Explanation/>
+      
     </>
   );
 }
