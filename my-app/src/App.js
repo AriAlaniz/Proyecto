@@ -1,40 +1,13 @@
-import Banner from "./components/Banner.js";
-import Explanation from "./components/Explanation.js";
-import  Layout from "./components/Layout.js";
-
+import NavBar from './components/NavBar';
+import './App.css';
 
 function App() {
   return (
     <>
-  <Banner/>
-   <Explanation/>
-   </>
+      <NavBar />
+      <h1>Tienda de regalos</h1>
+    </>
   );
 }
 
 export default App;
-
-const Counter = () => {
-  const [count, setCount] = useState(0);
-  const [LastClickDate, setLastClickDate] = useState(new Date());
-}
-const onClick = () => {
-  setCount(count + 1);
-  setLastClickDate(new Date());
-};
-
-return (
-  <>
-  <h1>Cantidad de productos: {count} </h1>
-  <button onClick={onClick}> + </button>
-  <button onClick={ () => setCount(count - 1)}> - </button>
-  </>
-)
-
-export default function App () {
-  return(
-    <>
-    <Counter/>
-    </>
-  );
-}
