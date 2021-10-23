@@ -1,6 +1,6 @@
 import './NavBar.css';
 import CartWidgets from './CartWidgets';
-import logo from '../imag/logo.pneg';
+import logo from '../imag/logo.jpeg';
 
 function NavBar() {
     return <>
