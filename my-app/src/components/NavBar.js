@@ -1,11 +1,17 @@
 import './NavBar.css';
 import CartWidgets from './CartWidgets';
+import logo from '../imag/logo.pneg';
 
 function NavBar() {
     return <>
         <nav>
-            <img></img>
-            <h3>Cositas Bellas</h3>
+            <img src={logo}></img>
+        <ul>
+            <li className='navLi'>Inicio</li>
+            <li className='navLi'>Productos</li>
+            <li className='navLi'>Como comprar</li>
+            <li className='navLi'>Contacto</li>
+        </ul>
             <CartWidgets/>
         </nav>
     </>
