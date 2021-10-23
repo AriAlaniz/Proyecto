@@ -1,7 +1,7 @@
 const Explanation = () => {
   return (
       <h1>
-         Explicacion
+        Tienda de regalos
       </h1>
   )
 }
