@@ -1,13 +1,15 @@
 import NavBar from './components/NavBar';
-import './App.css';
+import './styles/App.css';
 import Explanation from './components/Explanation';
+import ItemsConteiner from './components/itemsConteiner';
+
 
 function App() {
   return (
     <>
       <NavBar />
       <Explanation/>
-      
+      <ItemsConteiner/>
     </>
   );
 }

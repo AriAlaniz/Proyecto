@@ -1,13 +1,11 @@
 .conteiner {
-    
-    width: 98vw;
-    height: 97vh;
-    display: inline-flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: bisque;
+    width: auto;
+    display: flex;
 }
-.titulosNav {
+.navLi {
     font-size: 30px;
     font-family: 'Architects Daughter', cursive;
     font-family: 'Indie Flower', cursive;
@@ -20,10 +18,10 @@
     text-decoration: none;
     box-shadow: 0 0 0 0 rgba(247, 91, 247, 0.55);
     animation: pulse 1.5s infinite;
-    border-top: solid 5px rgb(240, 11, 202);
-    border-right: solid 5px blue;
-    border-bottom: solid 5px rgb(12, 215, 12);
-    border-left: solid 5px rgb(255, 162, 0);
+    border-top: solid 5px rgb(247, 158, 232);
+    border-right: solid 5px rgb(247, 158, 232);
+    border-bottom: solid 5px rgb(247, 158, 232);
+    border-left: solid 5px rgb(247, 158, 232);
 }
 h1 {
     color: black;
@@ -32,4 +30,8 @@ h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     align-items: center;
     text-align: center;
+}
+img {
+    width: 150px;
+    height: 150px;
 }
