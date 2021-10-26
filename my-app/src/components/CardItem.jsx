@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Counter from "./components/Counter";
-import ItemsConteiner from "./itemsConteiner";
+import Counter from '../components/Counter';
 import './styles/cardItems.css'
 
 const CardItem = ({item})=>{

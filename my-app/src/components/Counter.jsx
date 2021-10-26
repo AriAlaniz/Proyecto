@@ -8,4 +8,4 @@ const Counter = ({onDis,initial,onAdd}) => {
     )
 }
 
-export default Counter
+export default Counter 
