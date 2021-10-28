@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Counter from '../components/Counter';
-import './styles/cardItems.css'
+import '../styles/cardItems.css'
 
 const CardItem = ({item})=>{
 
@@ -24,15 +24,15 @@ const CardItem = ({item})=>{
     }
 
 
-const [prueba, setPrueba] = useState(fasle)
+const [prueba, setPrueba] = useState(false)
 
-useEffect(()=>{
+/*useEffect(()=>{
 setPrueba(true)
 },[])
 
 useEffect(()=> {
     setArrayP([...arrayP, counter])
-},[counter])
+},[counter])*/
 
 
 return (

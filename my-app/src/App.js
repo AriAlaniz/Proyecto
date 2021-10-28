@@ -6,6 +6,7 @@ import ItemsConteiner from './components/itemsConteiner';
 function App() {
   return (
     <>
+    
       <NavBar/>
       <ItemsConteiner/>
     </>

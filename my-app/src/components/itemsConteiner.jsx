@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
 import CardItem from "./CardItem";
-
+import { productList } from "./Cards";
 
 const ItemsConteiner =  () => {
-    console.log (producList)
-    console.log(producList)
+    console.log (productList)
+    console.log(productList)
    
   
 
@@ -13,7 +13,7 @@ const ItemsConteiner =  () => {
         <div className="containerItems">
         {productList.map(product => {
             return(
-            <CardItem item= {producList[0]} />
+            <CardItem item= {productList[0]} />
             )
         })
                }

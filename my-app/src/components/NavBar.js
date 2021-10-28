@@ -1,4 +1,4 @@
-import './styles/NavBar.css';
+import '../styles/NavBar.css';
 import logo from '../imag/logo.jpeg';
 import CartWidgets from '../components/CartWidgets';
 function NavBar() {
