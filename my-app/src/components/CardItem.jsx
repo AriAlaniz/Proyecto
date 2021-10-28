@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Counter from '../components/Counter';
+import Counter from './ItemCount';
 import '../styles/cardItems.css'
 
 const CardItem = ({item})=>{
@@ -36,12 +36,12 @@ useEffect(()=> {
 
 
 return (
-    <div className="containerCard">
-    <img src={item.picture}/>
-    <h3>{item.title}</h3>
-    <p>{item.description}</p>
-    <p>{item.price}</p>
-    <Counter onAdd={onAdd} onDis={onDis} initial={counter}/>
+    <div className="conteinerCard">
+    <img className="img" src={item.picture}/>
+    <h3 className="title">{item.title}</h3>
+    <p className="text">{item.description}</p>
+    <p className="text">{item.price}</p>
+    <Counter onAdd={onAdd} onDis={onDis} initial={counter} stock={item.stock}/>
     </div>
 )
 }
