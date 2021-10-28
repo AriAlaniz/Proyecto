@@ -8,7 +8,7 @@ const Counter = ({onDis,initial,onAdd}) => {
         <button className="botones" onClick={onAdd}>+</button>
         <p className="parr1">{initial}</p>
         <button className="botones" onClick={onDis}>-</button>
-        <button className="botones">Agregar al carrito</button>
+        <button className="boton">Agregar al carrito</button>
         </div>
         </>
     )

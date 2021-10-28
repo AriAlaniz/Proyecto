@@ -4,10 +4,12 @@
     align-items: center;
     width: 33%;
     gap: 5px;
-    border-radius: solid 4px black;
-    border-top: solid 4px black;
-    border-left: solid 4px black;
-    border-bottom: solid 4px black;
+    border-radius: solid 2px black;
+    border-top: solid 2px black;
+    border-left: solid 2px black;
+    border-bottom: solid 2px black;
+    width: 400px;
+    height: 400px;
 }
 .title {
     margin: 0;
