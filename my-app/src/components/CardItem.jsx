@@ -36,13 +36,15 @@ useEffect(()=> {
 
 
 return (
+    <>
     <div className="conteinerCard">
-    <img className="img" src={item.picture}/>
+    <img className="img">{item.picture}</img>
     <h3 className="title">{item.title}</h3>
     <p className="text">{item.description}</p>
     <p className="text">{item.price}</p>
     <Counter onAdd={onAdd} onDis={onDis} initial={counter} stock={item.stock}/>
     </div>
+    </>
 )
 }
 
