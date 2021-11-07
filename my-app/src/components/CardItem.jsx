@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import Counter from './ItemCount';
 import '../styles/cardItems.css'
 
@@ -35,13 +35,17 @@ useEffect(()=> {
 },[counter])*/
 
 
+class CardItem extends Component {
+render ()
+const = {picture, title, description, price} = this.props; 
+
 return (
     <>
     <div className="conteinerCard">
-    <img className="img">{item.picture}</img>
-    <h3 className="title">{item.title}</h3>
-    <p className="text">{item.description}</p>
-    <p className="text">{item.price}</p>
+    <img className="img">key={item.picture}</img>
+    <h3 className="title">key={item.title}</h3>
+    <p className="text">key={item.description}</p>
+    <p className="text">key={item.price}</p>
     <Counter onAdd={onAdd} onDis={onDis} initial={counter} stock={item.stock}/>
     </div>
     </>
