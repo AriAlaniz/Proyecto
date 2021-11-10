@@ -1,4 +1,5 @@
 import React, { Component } from "react"; 
+import '../styles/itemsDetails.css';
 
 
  export class ItemDetailConteiner extends Component {

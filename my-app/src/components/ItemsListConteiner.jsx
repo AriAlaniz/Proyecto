@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from "react";
 import CardItem from "./CardItem";
 import { productList } from "./Cards";
+import ItemDetailConteiner from "./ItemDetailConteiner";
 
 const ItemsConteiner =  () => {
     console.log (productList)
     console.log(productList)
-   
-  
 
     return (
         <>
@@ -14,11 +13,13 @@ const ItemsConteiner =  () => {
         {productList.map(product => {
             return(
             <CardItem item= {productList[0]} />
+            
             )
         })
                }
+               <ItemDetailConteiner/>
         </div>
         </>
     )
 }
-export default ItemsConteiner 
+export default ItemsConteiner

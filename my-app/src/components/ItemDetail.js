@@ -5,11 +5,17 @@ import React from "react";
 class App extends React.Component {
     state= {
         products: [
-
-        ],
-        index:0
+            {
+        "_id": "1",      
+        "title": "Autocebante",
+        "picture": ["./imag/autocebante.jpeg" ],
+        "price": 800,
+        "description": "capacidad de 800cc incluye bombilla material de plastico reforzado", 
+        "colors": ["pink", "red", "green", "white"],
+        "stock": 6
     }
-};
+  ]
+}
 
 myRef = React.createRef();
 const images = this.myRef.current.children;
@@ -22,13 +28,12 @@ handleTab = index => {
     this.setState({index: index})
 }
 
-
-render () 
+render() {
     const {productos, index} = this.state;
     return (
         <div className="App">
     {
-productList.map(item =>{
+    productList.map(item =>{
     <div className="details">
      <div className="bigImg">
         <img src={item.src[0]}/>
@@ -62,9 +67,7 @@ productList.map(item =>{
 
          </div>
     </div>
-}
-    </div>
-};)
+})
 
 
-export default App
+ export default App;
