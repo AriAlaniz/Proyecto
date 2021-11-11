@@ -3,6 +3,7 @@ import CardItem from "./CardItem";
 import { productList } from "./Cards";
 import ItemDetailConteiner from "./ItemDetailConteiner";
 
+
 const ItemsConteiner =  () => {
     console.log (productList)
     console.log(productList)
