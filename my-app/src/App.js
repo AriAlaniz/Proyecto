@@ -1,34 +1,26 @@
 import React from 'react'; 
  import  NavBar  from './components/NavBar';
  import './styles/App.css';
- import  ItemDetail  from './components/ItemDetail';
- import './styles/cardItems.css';
- //import ItemDetailConteiner from './components/ItemDetailConteiner';
- import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ItemDetailConteiner } from './components/ItemDetailConteiner';
-import { Footer } from './components/Footer';
+ import { BrowserRouter, Switch} from 'react-router-dom';
+ import Product from './components/Product';
+ import Products from './components/Products';
+ 
+ 
+ 
 
  
 
 function App () {
   return (
-    <BrowserRouter>
+  <BrowserRouter>
+    <Switch>
     <NavBar/>
-    <Routes>
-    <Route exact path='/'>
-    <ItemDetailConteiner/>
-    </Route>
-    <Route exact path='/Productos'>
-     <ItemDetailConteiner/>
-    </Route>
-    <Route exact path='/Como comprar'>
-      <ItemDetail/>
-    </Route>
-    <Route exact path='/Contacto'>
-     <Footer/>
-    </Route>
-    </Routes>
+    <Product/>
+    <Products/>
+    
+    
+    </Switch>
     </BrowserRouter>
   )
 }
-export default App
+export default App;

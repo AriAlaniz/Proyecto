@@ -1,7 +1,8 @@
 export const menu = ["Inicio", "Como comprar", "Productos", "Contacto"];
 
-export const productList = [
+const productList = [
     {
+        id: 1,
         title: "Autocebante",
         picture: "./imag/autocebante.jpeg" ,
         price: 800,
@@ -9,6 +10,7 @@ export const productList = [
         stock: 6,
     },
     {
+        id: 2,
         title: "Mate ceramica",
         picture: "./imag/mateceramica.jpeg" ,
         price: 480,
@@ -16,6 +18,7 @@ export const productList = [
         stock: 6
     },
     {
+        id: 3,
         title: "cuaderno A4",
         picture: "./imag/cuaderno.jpeg",
         price: 690,
@@ -23,13 +26,15 @@ export const productList = [
         stock: 4
     },
     {
+        id: 4,
         title: "Almohadon de lienzo",
         picture:  "./imag/almohadon.jpeg",
         price: 650,
         description: "medida 40x40cm",
         stock: 8
     },
-    {
+    { 
+        id: 5,
         title: "Termo de acero",
         picture: "./imag/termolitro.jpeg",
         price: 2150,
@@ -37,6 +42,7 @@ export const productList = [
         stock: 3
     },
     {
+        id: 6,
         title: "Mochila puffer rosa",
         picture: "./imag/mochila.jpeg",
         price: 1500,
@@ -44,6 +50,7 @@ export const productList = [
         stock: 7
     },
     {
+        id: 7,
         title: "Vaso coffe celeste",
         picture: "./imag/vasocofe.jpeg",
         price: 350,
@@ -51,4 +58,5 @@ export const productList = [
         stock: 3
     }
 ];
+
 

@@ -1,5 +1,5 @@
 import { Component, useState } from "react";
-// import Counter from './ItemCount';
+import Counter from './ItemCount';
 import '../styles/cardItems.css'
 
 const CardItem = ({item}) => {
@@ -22,23 +22,23 @@ const CardItem = ({item}) => {
         }
     }
 
-    // class CardItem extends Component {
-    //     // const = {picture, title, description, price} = this.props
+     class CardItem extends Component {
+        const = {picture, title, description, price} = this.props;
 
-    //     render() {
-    //         return (
-    //             <>
-    //                 <div className="conteinerCard">
-    //                 <img className="img">key={item.picture}</img>
-    //                 <h3 className="title">key={item.title}</h3>
-    //                 <p className="text">key={item.description}</p>
-    //                 <p className="text">key={item.price}</p>
-    //                 <Counter onAdd={onAdd} onDis={onDis} initial={counter} stock={item.stock}/>
-    //                 </div>
-    //             </>
-    //         )
-    //     }
-    // }
+        render() {
+             return (
+                 <>
+                     <div className="conteinerCard">
+                     <img className="img">key={item.picture}</img>
+                     <h3 className="title">key={item.title}</h3>
+                     <p className="text">key={item.description}</p>
+                     <p className="text">key={item.price}</p>
+                    <Counter onAdd={onAdd} onDis={onDis} initial={counter} stock={item.stock}/>
+                     </div>
+                 </>
+             )
+         }
+     }
 }
 
 export default CardItem;

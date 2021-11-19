@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/itemsDetails.css';
+import { getFirebase } from '../../Firebase';
 
+export default function App(){
+    useEffect(() => {
+   const db=
+    }, []);
+}
 
 class App extends React.Component {
     state= {
