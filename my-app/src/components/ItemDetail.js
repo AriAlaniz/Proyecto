@@ -1,10 +1,15 @@
 import React, { useEffect } from 'react';
 import '../styles/itemsDetails.css';
 import { getFirebase } from '../../Firebase';
+import { getFirestore } from '@firebase/firestore';
 
 export default function App(){
     useEffect(() => {
-   const db=
+   const db= getFirestore();
+
+   getDocs(collection(db, "items")).then((snapshot) => {
+       setProducts(snapshot.docs.map((doc) => doc.data()));
+   });
     }, []);
 }
 
