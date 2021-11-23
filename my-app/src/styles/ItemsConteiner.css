@@ -22,3 +22,12 @@
     display: flex;
     font-size: 20px;
 }
+.ItemsListConteiner {
+color: black;
+background-color: rgb(177, 133, 197);
+}
+.Title{
+    color: black;
+    font-size: medium;
+    background-color: cadetblue;
+}

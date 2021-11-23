@@ -3,12 +3,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
 import { createStyles, alpha, Theme, makeStyles } from '@material-ui/core/styles';
-import logo from '../imag/logo.jpeg';
-import SearchIcon from '@material-ui/icons/Search';
+import logo from '../imag/logo.png';
 import { Badge, Button } from '@material-ui/core';
-import { AccessAlarm, ShoppingCart, ThreeDRotation } from '@material-ui/icons';
+import { AccessAlarm, CenterFocusStrong, CenterFocusStrongOutlined, CenterFocusStrongRounded, ShoppingCart, ThreeDRotation } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme: Theme) => ({
         root: {
@@ -16,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginBottom: "7rem",
     },
     appBar: {
-    backgroundColor: "whitesmoke",
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #21CBF3 90% )',
     boxShadow:"none",
     },
     grow: {
@@ -24,7 +22,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     button: {
         marginLeft: theme.spacing(2),
-    },
+             
+            },
     image: {
         marginRight: "15px",
         height:"6rem",
@@ -54,6 +53,12 @@ export default function NavBar() {
           <div className={classes.button}>
               <Button variant="outlined">
               <strong>Iniciar sesion</strong>
+              </Button>
+              <Button variant="outlined">
+             <strong>Productos</strong>
+              </Button>
+              <Button variant="outlined">
+               <strong>Contacto</strong>
               </Button>
              <IconButton aria-label="show cart items" color="inherit">
                 <Badge badgeContent={2} color="secondary">
