@@ -1,61 +1,63 @@
-import {useEffect, useState} from "react";
-import { useParams } from "react-router";
-//import Loader from "react-loader-spinner";
-import '../styles/ItemsListConteiner';
-import { getFirestore } from '../../Firebase';
-import { collection, query, where, getDocs } from "firebase/firestore";
+import ItemList from '../components/CardItem';
+import { useState, useEffect } from 'react';
+import Loader from '../components/Loader';
+import { useParams } from 'react-router-dom';
+import { collection, getFirestore, getDocs } from 'firebase/firestore';
 
 
-function ItemsListConteiner({categories}) {
-    
-    const [products, setProducts] = useState(null)
-    const [msg, setMsg] = useState (null)
-    const [loading, setLoading] = useState (true)
-    const {id} = useParams()
+const ItemsListContainer = ({ greeting, category }) => {
+    const [products, setProducts] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const { categoryId } = useParams();
+    category = categoryId;
 
-useEffect( () => {
-    setProducts (null)
-    setLoading (true)
+    useEffect(() => {
+        setLoading(true);
+        const db = getFirestore();
+        getDocs(collection(db, 'items'))
+            .then((snapshot) => {
+                let unfiltered = snapshot.docs.map((doc) => doc.data());
+                console.log(categoryId, category, "1")
+                switch (categoryId) {
+                    case "Deco":
+                        setProducts(unfiltered.filter(prod => prod.categoryId === "Deco"));
+                        break;
+                    case "Cocina":
+                        setProducts(unfiltered.filter(prod => prod.categoryId === "Cocina"));
+                        break;
+                    case "Accesorios":
+                        setProducts(unfiltered.filter(prod => prod.categoryId === "Accesorios"));
+                        break;
+                    case "Papeleria":
+                        setProducts(unfiltered.filter(prod => prod.categoryId === "Papeleria"));
+                        break;
+                    default:
+                        setProducts(unfiltered);
+                        break;
+                }
 
-
-    const db = getFirestore();
-    let q
-
-    const isInCategories = categories.find( category => category.key === id)
-    const hasIdAndIsInCategory = id && isInCategories
-    const dinamicMsg = id && isInCategories ? "Productos de " + id: "Todos nuestros productos"
-
-        q= query(
-            collection(db, "items"),
-            hasIdAndIsInCategory ? where ("category","==", id): undefined
-        );
-        
-    getDocs(q).then ( snapshot => {
-
-        setProducts(
-            snapshot.docs.map( doc=> {
-                const productInBase = { ...doc.data(), id: doc.id};
-                return productInBase;
+               
             })
-        )
-        setMsg(dinamicMsg)
-        setLoading(fasle)
-    })
-}, [id, categories])
+            .catch((err) => {
+                console.log('Ocurrió un error al obtener los productos: ' + err);
+            })
+            .finally(() => {
+                setLoading(false);
+            })
+    }, [categoryId]);
+
+    return (
+        <section className="container">
+            {
+                !loading && products ? (
+                    <>
+                        <h1 className="greeting">{greeting}{category}</h1>
+                        <ItemList products={products} />
+                    </>
+                ) : (<Loader />)
+            }
+        </section>
+    );
 }
 
-
-return (
-    <div className="ItemListConteiner">
-        {products &&
-        <>
-        {id && <h3 className="Title">{msg}</h3>}
-        <ItemList items={products}/>
-        </>
-        }
-        {loading && <Loader type='Rings' color='var(---accent-font-color)' height={80} width={80}/>}
-
-    </div>
-);
-
-export default ItemsListConteiner
+export default ItemsListContainer;

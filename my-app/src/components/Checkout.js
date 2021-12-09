@@ -1,6 +1,7 @@
 import {useRef, useState} from "react";
-//import { useAuth } from ;
-
+import { useAuth } from "react" ;
+import { Button } from "@material-ui/core";
+import ConfirmPopUp from './ConfirmPopUs';
 
 function Checkout ({close}) {
 const { user, preference } = useAuth()
@@ -53,37 +54,6 @@ const closeHandler = () => {
     }
 }
 
-const buy = () =>{
-    const Items = cart.map( 1 => {
-        return {
-            id: i.id,
-            title: i.title,
-            price: i.price,
-            description: i.description,
-            image: i.image,
-            category: i.category
-        }
-    })
-
-    const order ={
-        buyer: {name, phone: tel, email: mail},
-        items,
-        total: cart.reduce( (acum, item)=> acum + item.price + item.title, 0)
-    }
-
-    const db = getFirestore();
-
-    const orderCollection = collection (db, "orders");
-
-    addDoc(ordersCollection, order).then ( ({id}) => setNewOrder(id) );
-
-cart.forEach(i => {
-    const productInBase = doc (db, "items", i.id);
-    
-});
-
-}
-
 return  (
     <div className="backChek"> 
     <form className="">
@@ -99,11 +69,11 @@ return  (
     </div>
     <div className="inputConteiner">
         <label>Telefono</label>
-         <input ref={telInput} type='number' value={tel} onChange={ (e)=>inputHandler(e) }></input> 
+         <input  type='number' value={tel} onChange={ (e)=>inputHandler(e) }></input> 
     </div>
     <div className="inputConteiner">
     <label>Email</label>
-    <input ref={mailInput} type='email' value={mail} onChange={ (e)=> inputHandler(e) }></input>
+    <input  type='email' value={mail} onChange={ (e)=> inputHandler(e) }></input>
     </div>
 
     <Button onClick={ (e) => confirmHandler(e)} className="addBtn">Confirmar</Button>
@@ -112,7 +82,7 @@ return  (
         </ConfirmPopUp>
         </>
   }
-  {newOrder &&
+  { newOrder &&
 
   <h3>Gracias por tu compra, {name}!</h3>}
 
@@ -127,4 +97,4 @@ return  (
     </div>
   );
 }
-export default Checkout
+export default Checkout;

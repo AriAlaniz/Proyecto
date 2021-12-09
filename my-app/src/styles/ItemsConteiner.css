@@ -31,3 +31,12 @@ background-color: rgb(177, 133, 197);
     font-size: medium;
     background-color: cadetblue;
 }
+.itemPicture {
+    width: 350px;
+    height: 350px;
+}
+.btnVer{
+    color: black;
+    font-size: medium;
+    background-color: cornflowerblue;
+}

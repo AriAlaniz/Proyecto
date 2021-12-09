@@ -1,72 +1,56 @@
-import React, { useEffect } from 'react';
 import '../styles/itemsDetails.css';
-import { getFirebase } from '../../Firebase';
-import { getFirestore } from '@firebase/firestore';
+import { getFirestore } from '@firebase/firestore';;
+import { useState, useEffect } from 'react';
+import ItemDetail from '../../components/ItemDetail/ItemDetail.js';
+import Loader from '../../components/Loader/Loader';
+import { useParams } from 'react-router';
+import { doc, getDoc, getFirestore } from '@firebase/firestore';
+import { NavLink } from 'react-router-dom';
 
-export default function App(){
+const ItemDetail = () => {
+    const { itemId } = useParams();
+    const [itemDetail, setItemDetail] = useState(null);
+    const [loading, setLoading] = useState(false);
+
     useEffect(() => {
-   const db= getFirestore();
+        setLoading(true);
+        const db = getFirestore();
+        const itemRef = doc(db, 'items', itemId);
+        getDoc(itemRef)
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    setItemDetail(snapshot.data());
+                } else throw Error('Artículo inexistente.');
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+            .finally(setLoading(false));
+        }, [itemId]);
 
-   getDocs(collection(db, "items")).then((snapshot) => {
-       setProducts(snapshot.docs.map((doc) => doc.data()));
-   });
-    }, []);
+    return (
+        <>
+            <div className="itemDetailContainer">
+                {!loading ?
+                    <> {itemDetail ?
+                        (
+                            <ItemDetail
+                            name={itemDetail.name}
+                            pictureUrl={itemDetail.image}
+                            price={itemDetail.price}
+                            description={itemDetail.description}
+                        />) : <div>
+                                <h1 className="greeting">El item no existe!</h1>
+                                <NavLink to={'/'}><button className="cartBuy">Ir a los productos</button></NavLink>
+                        </div>
+                    } </>
+                : (<Loader />)
+                } 
+                
+                
+            </div>
+        </>
+    );
 }
 
-class App extends React.Component {
-    state= {
-        products: [
-            {
-        "_id": "1",      
-        "title": "Autocebante",
-        "picture": ["./imag/autocebante.jpeg" ],
-        "price": 800,
-        "description": "capacidad de 800cc incluye bombilla material de plastico reforzado", 
-        "colors": ["pink", "red", "green", "white"],
-        "stock": 6
-    }
-  ]
-}
-
-render () {
- const { products } = this.state;
- return(
-     <div className="App">
-      {
-          products.map(item =>(
-              <div className="details">
-              <div className="big-img">
-                  <img src={item.src[0]}/>
-              </div>
-              <div className="box">
-                  <div className="row"> 
-                        <h2>{item.title}</h2>
-                        <span>${item.price}</span>
-                  </div>
-                    <div className="colors">
-                        {
-                            item.colors.map(color =>(
-                                <button style={{background: color}}></button>
-                            ))
-                        }
-                    </div>
-                    <p>{item.description}</p>
-                    <p>{item.content}</p>
-
-                    <div className="thumb"> 
-                    {
-                        item.src.map(img=>(
-                            <img src={img}></img>
-                        ))
-                    }
-                    </div>
-                    <button className="carrito">Agregar al carrito</button>
-              </div>
-              </div>
-          ))
-      }
-     </div>
-  );   
- }
-} 
-export default App
+export default ItemDetail;
