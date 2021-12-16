@@ -1,0 +1,14 @@
+.img{
+    width:auto;
+    align-items: center;
+    display: inline-block;
+}
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color:rgb(179, 143, 188);
+    border-top: dashed deeppink;
+    border-left: dashed deeppink;
+    border-right: dashed deeppink;
+    border-bottom: dashed deeppink;
+}
