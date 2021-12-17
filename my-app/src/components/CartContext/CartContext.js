@@ -26,10 +26,7 @@ export const CartProvider=({children})=>{
 
         }else{
             swal({
-                title:"Actualizamos el carrito!",
-                text:`${item.name} ya estaba en el carrito, agregamos ${quantity} más`,
-                icon:"success",
-                button:"X"
+                title:"Actualizamos el carrito!"
             })
             cartContent.forEach((prod)=>{
                 if(prod.name===item.name){

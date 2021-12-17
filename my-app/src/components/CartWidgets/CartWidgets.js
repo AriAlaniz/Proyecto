@@ -9,9 +9,8 @@ import { IconButton } from '@material-ui/core';
 export const CartWidget=()=>{
     const {cartContent,itemsOnCart}=useCart();
     const [quantity, setQuantity]=useState(0)
-    useEffect(()=>{
-        setQuantity(itemsOnCart(cartContent));
-    },[cartContent, itemsOnCart])
+    useEffect(()=>{ setQuantity(itemsOnCart(cartContent));
+     },[cartContent, itemsOnCart])
     return(
         <>
             <Link to="/cart"><IconButton aria-label="show cart items" color="inherit">

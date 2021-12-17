@@ -49,11 +49,10 @@ export const CheckOut=()=>{
     return(
         <Container className="text-center">
             <h3 className='title'>Ingresá tus datos!</h3>
-            <Form className="bgForm">
+            <Form>
                 {inputs.map((input)=>(
-                        <Form.Group key={input.name} className="mb-3 dat" controlId="formBasicName ">
-                            <Form.Label className='dat'>{input.label}</Form.Label>
-                            <br/>
+                        <Form.Group key={input.name} controlId="formBasicName ">
+                            <Form.Label>{input.label}</Form.Label>
                              <input 
                                 value={userInfo[input.name]}
                                 type="text"

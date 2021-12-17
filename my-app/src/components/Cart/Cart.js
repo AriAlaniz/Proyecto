@@ -16,12 +16,12 @@ export const Cart=()=>{
             <h1  className="text-center">Carrito de compras 🛒</h1>
             {cartContent ? cartContent.map(item=><CartRow item={item}/>):<SearchProduct/>}
             <br/>
-            {cartContent.length>0?<Row className="finalPrice pt-2">
+            {cartContent.length>0?<Row>
                 <Col xs lg="9">
                         <h4 className="price">TOTAL: ${finalPrice(cartContent)}</h4>
                 </Col>
                 <Col>
-                    <Button variant="success"><NavLink to="/Checkout" activeClassName="buyA" className="comprar">Comprar✔️</NavLink></Button>
+                    <Button variant="success"><NavLink to="/Checkout" className="comprar">Comprar✔️</NavLink></Button>
                     <Button variant="danger" onClick={clear} className="vaciar">Vaciar carrito</Button>
 
                 </Col>

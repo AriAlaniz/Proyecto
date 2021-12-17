@@ -2,44 +2,26 @@
     width: 50px;
     height: 50px;
 }
-.productImage{
-    height: 7rem;
-    width: 7rem;
-    border-radius: 50%;
-    padding-left: 3px;
-    padding-bottom: 3px;
-}
-.bg-Col{
+.columna{
     background-color: rgba(62, 62, 63, 0.938);
 }
-.bg-quantity{
-    
-    font-size: 12px;
+.quantity{
+    display: inline-block;
+    font-size: 15px;
     color: black;
     padding:12px;
     background-color: rgb(146, 190, 156);
-    border-radius: 50%;
-}
-b{
-    color: black;
 }
 .cruz{
     background-color: white;
     display: flex;
     width: auto;
 }
-.bg-div{
+.divs{
     font-size: 15px;
     color: whitesmoke;
-    font-style: italic;
-    background-color: rgba(0, 0, 0, 0.541);
     margin-bottom: 2px;
 }
-
-.productName{
-    font-weight: bold;
-}
-
 .deleteProduct{
     font-weight: 500;
     background-color: rgb(204, 106, 106);

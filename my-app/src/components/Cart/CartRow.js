@@ -6,29 +6,29 @@ export const CartRow=({item})=>{
     const {deleteItem}=useCart()
     return(
         <Row className="text-center pt-2">
-            <Col className="bg-Col imag">
+            <Col className="columna imag">
                 <Card style={{ width: '7rem' }} className="bg-Col">
                 <div>
                     <img className="imag" src={item.image}></img>
                 </div>                    
                 </Card>
             </Col>
-            <Col className="bg-Col">
+            <Col className="columna">
                 <p >{item.name}</p>
-                <div className="bg-div">
+                <div className="divs">
                     <span>{item.description}</span>
                 </div>
                 
             </Col>
-            <Col className="bg-Col">
+            <Col className="columna">
                 <p className="cantidad">Cantidad en el carrito:</p>
-                <span className="bg-quantity">{item.quantity}</span>
+                <span className="quantity">{item.quantity}</span>
             </Col>
-            <Col className="bg-Col">
+            <Col className="columna">
                 <p>Precio: <b>${item.quantity*item.price}</b></p>
-                <div className="bg-div">
+                <div className="divs">
                     <span>Cantidad: {item.quantity}</span>
-                    <br/>
+                   
                     <span>Precio de unidad:{item.price}</span>
                 </div>
             </Col>
